@@ -23,7 +23,7 @@
                                                                                                  
 ```
 
-*60+ High-Performance Modules · Cyber-Red TUI · Asynchronous Execution · Multi-Token Support*
+*60+ High-Performance Modules · Rainbow TUI · Asynchronous Execution · Multi-Token Support*
 
 ---
 
