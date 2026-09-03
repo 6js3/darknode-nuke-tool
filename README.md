@@ -54,7 +54,7 @@
 #### 1. Setup Environment
 Ensure your folder structure matches the deployment package. Run `python_installer.bat` if you lack Python 3.10+, followed by `setup.bat` to pull the latest `discord.py` and `requests` libraries.
 
-![Folder Structure](https://i.imgur.com/a/uzeSzyH.jpg)
+![Folder Structure](https://github.com/6js3/darknode-nuke-tool/blob/main/folder-structure.png?raw=true)
 
 #### 2. Initialization
 Launch `start.bat`. The TUI will initialize the **VOID-NUKE** kernel. You will be prompted to enter your **Bot Token**. Once validated, provide the **Server ID** of the target environment.
