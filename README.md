@@ -5,7 +5,7 @@
 
 ---
 
-[![TELEGRAM](https://img.shields.io/badge/TELEGRAM-T.ME%2FCXI-blue?style=for-the-badge&logo=telegram)](https://t.me/crj)
+[![TELEGRAM](https://img.shields.io/badge/TELEGRAM-T.ME%2FCXI-blue?style=for-the-badge&logo=telegram)](https://t.me/kkjeo)
 [![DISCORD](https://img.shields.io/badge/DISCORD-DISCORD.GG%2FCXI-5865F2?style=for-the-badge&logo=discord)](https://discord.gg/cxi)
 [![PYTHON](https://img.shields.io/badge/PYTHON-3.12+-yellow?style=for-the-badge&logo=python)](https://www.python.org/)
 [![WINDOWS](https://img.shields.io/badge/WINDOWS-10%2F11-red?style=for-the-badge&logo=windows)](https://www.microsoft.com/windows)
