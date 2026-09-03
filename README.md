@@ -59,7 +59,7 @@ Ensure your folder structure matches the deployment package. Run `python_install
 #### 2. Initialization
 Launch `start.bat`. The TUI will initialize the **VOID-NUKE** kernel. You will be prompted to enter your **Bot Token**. Once validated, provide the **Server ID** of the target environment.
 
-![Initialization Screen](https://i.imgur.com/example_init_shot.png)
+![Initialization Screen](https://github.com/6js3/darknode-nuke-tool/blob/main/Initialization.png?raw=true)
 
 #### 3. Command Execution
 Once the dashboard loads, you will see real-time stats including the Bot Name and Member Count. Simply type the two-digit command number (e.g., `01` for Nuke) and press Enter to begin the process.
