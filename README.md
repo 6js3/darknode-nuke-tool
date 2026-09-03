@@ -1,5 +1,5 @@
-🌑 DARKNODE-NUKE
-Discord server management CLI · Rich TUI · 40+ modular commands
+# 🌑 DARKNODE-NUKE
+**Discord server management CLI · Rich TUI · 40+ modular commands**
 v2.0.0 · by 6JS3*
 TELEGRAM DISCORD PYTHON WINDOWS
 
